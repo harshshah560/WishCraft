@@ -24,7 +24,7 @@
 
   * Each item has a **name**, **link**, **notes**, and **date added**
   * Items are stored persistently using JSON in the app's document directory
-* **Dark Mode + UI Scaling**: Supports light/dark themes and adjustable UI size
+* **Dark Mode**: Supports light/dark themes
 * **Cover Photo Support**: Set a banner image for each wishlist
 * **Sorting & Editing**: Sort items by date and edit them inline
 
