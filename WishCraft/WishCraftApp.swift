@@ -2,6 +2,8 @@ import SwiftUI
 
 @main
 struct WishCraftApp: App {
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
     @StateObject private var wishlistManager = WishlistManager()
     @AppStorage("isDarkMode") private var isDarkMode: Bool?
     @StateObject private var uiSettings = UISettings()
@@ -11,22 +13,19 @@ struct WishCraftApp: App {
             ContentView(isDarkMode: $isDarkMode)
                 .environmentObject(wishlistManager)
                 .environmentObject(uiSettings)
-                .environment(\.sizeCategory, uiSettings.contentSizeCategory) // << SETS DYNAMIC TYPE CATEGORY
+                .environment(\.sizeCategory, uiSettings.contentSizeCategory)
                 .preferredColorScheme(isDarkMode == true ? .dark : (isDarkMode == false ? .light : nil))
-        }
-        .commands {
-            CommandGroup(replacing: .newItem) {
-                Button("New Wishlist") {
-                    wishlistManager.addWishlist()
+                .onAppear {
+                    if AppDelegate.launchedFromExtension {
+                        NSApp.activate(ignoringOtherApps: true)
+                    }
                 }
-                .keyboardShortcut("n", modifiers: .command)
-            }
         }
 
         Settings {
             PreferencesView(isDarkMode: $isDarkMode, isPresentedAsSheet: false)
                 .environmentObject(uiSettings)
-                .environment(\.sizeCategory, uiSettings.contentSizeCategory) // << ALSO FOR PREFERENCES WINDOW
+                .environment(\.sizeCategory, uiSettings.contentSizeCategory)
         }
     }
 }

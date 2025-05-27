@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D8CE74542DE61A060044CAAC /* WishCraftSaver.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D8CE743B2DE61A060044CAAC /* WishCraftSaver.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D8CE745C2DE623940044CAAC /* Swifter in Frameworks */ = {isa = PBXBuildFile; productRef = D8CE745B2DE623940044CAAC /* Swifter */; };
+		D8CE745E2DE623940044CAAC /* Example in Frameworks */ = {isa = PBXBuildFile; productRef = D8CE745D2DE623940044CAAC /* Example */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,9 +57,22 @@
 		D8CE743B2DE61A060044CAAC /* WishCraftSaver.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WishCraftSaver.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		D8CE74602DE647DB0044CAAC /* Exceptions for "WishCraft" folder in "WishCraft" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = D88456522DE406CB007EB67B /* WishCraft */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		D88456552DE406CB007EB67B /* WishCraft */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				D8CE74602DE647DB0044CAAC /* Exceptions for "WishCraft" folder in "WishCraft" target */,
+			);
 			path = WishCraft;
 			sourceTree = "<group>";
 		};
@@ -78,6 +93,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8CE745C2DE623940044CAAC /* Swifter in Frameworks */,
+				D8CE745E2DE623940044CAAC /* Example in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +165,8 @@
 			);
 			name = WishCraft;
 			packageProductDependencies = (
+				D8CE745B2DE623940044CAAC /* Swifter */,
+				D8CE745D2DE623940044CAAC /* Example */,
 			);
 			productName = WishCraft;
 			productReference = D88456532DE406CB007EB67B /* WishCraft.app */;
@@ -253,6 +272,9 @@
 			);
 			mainGroup = D884564A2DE406CB007EB67B;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				D8CE745A2DE623940044CAAC /* XCRemoteSwiftPackageReference "swifter" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = D88456542DE406CB007EB67B /* Products */;
 			projectDirPath = "";
@@ -476,6 +498,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WishCraft/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -501,6 +524,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WishCraft/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -688,6 +712,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D8CE745A2DE623940044CAAC /* XCRemoteSwiftPackageReference "swifter" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/httpswift/swifter.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D8CE745B2DE623940044CAAC /* Swifter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D8CE745A2DE623940044CAAC /* XCRemoteSwiftPackageReference "swifter" */;
+			productName = Swifter;
+		};
+		D8CE745D2DE623940044CAAC /* Example */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D8CE745A2DE623940044CAAC /* XCRemoteSwiftPackageReference "swifter" */;
+			productName = Example;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D884564B2DE406CB007EB67B /* Project object */;
 }

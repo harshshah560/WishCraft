@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "WishCraft Clipper",
+  "version": "1.0",
+  "description": "Save products to your WishCraft wishlist",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": [
+    "http://localhost:6521/*",
+    "http://127.0.0.1:6521/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

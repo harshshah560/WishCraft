@@ -1,4 +1,5 @@
-import SwiftUI // For @Published, Binding etc.
+import SwiftUI
+import Swifter
 
 class WishlistManager: ObservableObject {
     @Published var wishlists: [Wishlist] = []
@@ -9,6 +10,8 @@ class WishlistManager: ObservableObject {
     }
     private let wishlistsFilename = "wishlists.json"
 
+    private var server = HttpServer()
+
     init() {
         loadWishlists()
         if wishlists.isEmpty {
@@ -16,6 +19,7 @@ class WishlistManager: ObservableObject {
         } else if selectedWishlistId == nil && !wishlists.isEmpty {
             selectedWishlistId = wishlists.first?.id
         }
+        startServer()
     }
 
     var selectedWishlist: Wishlist? {
@@ -30,12 +34,12 @@ class WishlistManager: ObservableObject {
             }
             wishlists[index] = newValue
             if selectedWishlistId != newValue.id {
-                 selectedWishlistId = newValue.id
+                selectedWishlistId = newValue.id
             }
             saveWishlists()
         }
     }
-    
+
     var selectedWishlistBinding: Binding<Wishlist?> {
         Binding<Wishlist?>(
             get: { self.selectedWishlist },
@@ -85,7 +89,7 @@ class WishlistManager: ObservableObject {
             saveWishlists()
         }
     }
-    
+
     func updateWishlist(_ wishlist: Wishlist) {
         if let index = wishlists.firstIndex(where: { $0.id == wishlist.id }) {
             wishlists[index] = wishlist
@@ -110,8 +114,113 @@ class WishlistManager: ObservableObject {
     func loadWishlists() {
         guard let url = documentsUrl?.appendingPathComponent(wishlistsFilename) else { return }
         guard FileManager.default.fileExists(atPath: url.path) else { wishlists = []; return }
-        do { let data = try Data(contentsOf: url); let decoder = JSONDecoder(); decoder.dateDecodingStrategy = .iso8601
+        do {
+            let data = try Data(contentsOf: url)
+            let decoder = JSONDecoder(); decoder.dateDecodingStrategy = .iso8601
             wishlists = try decoder.decode([Wishlist].self, from: data)
-        } catch { print("Error loading wishlists: \(error.localizedDescription). Starting fresh."); wishlists = [] }
+        } catch {
+            print("Error loading wishlists: \(error.localizedDescription). Starting fresh.")
+            wishlists = []
+        }
+    }
+
+    // MARK: - Server
+
+    private func startServer() {
+        do {
+            try server.start(6521, forceIPv4: true)
+            print("✅ WishCraft server running at http://localhost:6521")
+            setupServerRoutes()
+        } catch {
+            print("❌ Server failed to start: \(error.localizedDescription)")
+        }
+    }
+
+    private func setupServerRoutes() {
+        server["/getWishlists"] = { request in
+            let result = self.wishlists.map { ["id": $0.id.uuidString, "name": $0.name] }
+            let data = try! JSONSerialization.data(withJSONObject: result)
+            
+            return HttpResponse.raw(200, "OK", [
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET, OPTIONS",
+                "Access-Control-Allow-Headers": "Content-Type"
+            ]) { writer in
+                try writer.write([UInt8](data))
+            }
+        }
+
+
+
+        server["/addItem"] = { request in
+            if request.method == "OPTIONS" {
+                return HttpResponse.raw(200, "OK", [
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Allow-Methods": "POST, OPTIONS",
+                    "Access-Control-Allow-Headers": "Content-Type"
+                ]) { writer in try writer.write([]) }
+            }
+
+            guard request.method == "POST" else {
+                return HttpResponse.raw(405, "Method Not Allowed", [
+                    "Content-Type": "text/plain",
+                    "Access-Control-Allow-Origin": "*"
+                ]) { writer in
+                    try writer.write([UInt8]("Method Not Allowed".utf8))
+                }
+            }
+
+            do {
+                let decoder = JSONDecoder()
+
+                struct AddItemRequest: Codable {
+                    let wishlistId: UUID
+                    let name: String
+                    let link: String?
+                    let notes: String?
+                }
+
+                let itemRequest = try decoder.decode(AddItemRequest.self, from: Data(request.body))
+
+                let newItem = WishlistItem(
+                    name: itemRequest.name,
+                    link: itemRequest.link ?? "",
+                    notes: itemRequest.notes ?? "",
+                    dateAdded: Date()
+                )
+
+                DispatchQueue.main.async {
+                    self.addItem(to: itemRequest.wishlistId, item: newItem)
+                }
+
+                return .corsOk(text: "Item added successfully")
+            } catch {
+                print("❌ Error decoding item: \(error)")
+                return .corsBadRequest(reason: "Decoding error")
+            }
+        }
+    }
+}
+
+// MARK: - CORS Helper
+
+private extension HttpResponse {
+    static func corsOk(text: String) -> HttpResponse {
+        return .raw(200, "OK", [
+            "Content-Type": "text/plain",
+            "Access-Control-Allow-Origin": "*"
+        ]) { writer in
+            try writer.write([UInt8](text.utf8))
+        }
+    }
+
+    static func corsBadRequest(reason: String) -> HttpResponse {
+        return .raw(400, "Bad Request", [
+            "Content-Type": "text/plain",
+            "Access-Control-Allow-Origin": "*"
+        ]) { writer in
+            try writer.write([UInt8](reason.utf8))
+        }
     }
 }
