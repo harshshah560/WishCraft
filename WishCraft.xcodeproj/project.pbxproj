@@ -1,0 +1,693 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D8CE74542DE61A060044CAAC /* WishCraftSaver.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D8CE743B2DE61A060044CAAC /* WishCraftSaver.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D88456622DE406CD007EB67B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D884564B2DE406CB007EB67B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D88456522DE406CB007EB67B;
+			remoteInfo = WishCraft;
+		};
+		D884566C2DE406CD007EB67B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D884564B2DE406CB007EB67B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D88456522DE406CB007EB67B;
+			remoteInfo = WishCraft;
+		};
+		D8CE74522DE61A060044CAAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D884564B2DE406CB007EB67B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8CE743A2DE61A060044CAAC;
+			remoteInfo = WishCraftSaver;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D8CE74552DE61A060044CAAC /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D8CE74542DE61A060044CAAC /* WishCraftSaver.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D88456532DE406CB007EB67B /* WishCraft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WishCraft.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D88456612DE406CD007EB67B /* WishCraftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WishCraftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D884566B2DE406CD007EB67B /* WishCraftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WishCraftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8CE743B2DE61A060044CAAC /* WishCraftSaver.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WishCraftSaver.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		D88456552DE406CB007EB67B /* WishCraft */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = WishCraft;
+			sourceTree = "<group>";
+		};
+		D88456642DE406CD007EB67B /* WishCraftTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = WishCraftTests;
+			sourceTree = "<group>";
+		};
+		D884566E2DE406CD007EB67B /* WishCraftUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = WishCraftUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D88456502DE406CB007EB67B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D884565E2DE406CD007EB67B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D88456682DE406CD007EB67B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8CE74382DE61A060044CAAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D884564A2DE406CB007EB67B = {
+			isa = PBXGroup;
+			children = (
+				D88456552DE406CB007EB67B /* WishCraft */,
+				D88456642DE406CD007EB67B /* WishCraftTests */,
+				D884566E2DE406CD007EB67B /* WishCraftUITests */,
+				D88456542DE406CB007EB67B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D88456542DE406CB007EB67B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D88456532DE406CB007EB67B /* WishCraft.app */,
+				D88456612DE406CD007EB67B /* WishCraftTests.xctest */,
+				D884566B2DE406CD007EB67B /* WishCraftUITests.xctest */,
+				D8CE743B2DE61A060044CAAC /* WishCraftSaver.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D88456522DE406CB007EB67B /* WishCraft */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D88456752DE406CD007EB67B /* Build configuration list for PBXNativeTarget "WishCraft" */;
+			buildPhases = (
+				D884564F2DE406CB007EB67B /* Sources */,
+				D88456502DE406CB007EB67B /* Frameworks */,
+				D88456512DE406CB007EB67B /* Resources */,
+				D8CE74552DE61A060044CAAC /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D8CE74532DE61A060044CAAC /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				D88456552DE406CB007EB67B /* WishCraft */,
+			);
+			name = WishCraft;
+			packageProductDependencies = (
+			);
+			productName = WishCraft;
+			productReference = D88456532DE406CB007EB67B /* WishCraft.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D88456602DE406CD007EB67B /* WishCraftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D88456782DE406CD007EB67B /* Build configuration list for PBXNativeTarget "WishCraftTests" */;
+			buildPhases = (
+				D884565D2DE406CD007EB67B /* Sources */,
+				D884565E2DE406CD007EB67B /* Frameworks */,
+				D884565F2DE406CD007EB67B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D88456632DE406CD007EB67B /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				D88456642DE406CD007EB67B /* WishCraftTests */,
+			);
+			name = WishCraftTests;
+			packageProductDependencies = (
+			);
+			productName = WishCraftTests;
+			productReference = D88456612DE406CD007EB67B /* WishCraftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D884566A2DE406CD007EB67B /* WishCraftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D884567B2DE406CD007EB67B /* Build configuration list for PBXNativeTarget "WishCraftUITests" */;
+			buildPhases = (
+				D88456672DE406CD007EB67B /* Sources */,
+				D88456682DE406CD007EB67B /* Frameworks */,
+				D88456692DE406CD007EB67B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D884566D2DE406CD007EB67B /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				D884566E2DE406CD007EB67B /* WishCraftUITests */,
+			);
+			name = WishCraftUITests;
+			packageProductDependencies = (
+			);
+			productName = WishCraftUITests;
+			productReference = D884566B2DE406CD007EB67B /* WishCraftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		D8CE743A2DE61A060044CAAC /* WishCraftSaver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8CE74592DE61A060044CAAC /* Build configuration list for PBXNativeTarget "WishCraftSaver" */;
+			buildPhases = (
+				D8CE74372DE61A060044CAAC /* Sources */,
+				D8CE74382DE61A060044CAAC /* Frameworks */,
+				D8CE74392DE61A060044CAAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WishCraftSaver;
+			packageProductDependencies = (
+			);
+			productName = WishCraftSaver;
+			productReference = D8CE743B2DE61A060044CAAC /* WishCraftSaver.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D884564B2DE406CB007EB67B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1630;
+				LastUpgradeCheck = 1630;
+				TargetAttributes = {
+					D88456522DE406CB007EB67B = {
+						CreatedOnToolsVersion = 16.3;
+					};
+					D88456602DE406CD007EB67B = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = D88456522DE406CB007EB67B;
+					};
+					D884566A2DE406CD007EB67B = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = D88456522DE406CB007EB67B;
+					};
+					D8CE743A2DE61A060044CAAC = {
+						CreatedOnToolsVersion = 16.3;
+					};
+				};
+			};
+			buildConfigurationList = D884564E2DE406CB007EB67B /* Build configuration list for PBXProject "WishCraft" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D884564A2DE406CB007EB67B;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = D88456542DE406CB007EB67B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D88456522DE406CB007EB67B /* WishCraft */,
+				D88456602DE406CD007EB67B /* WishCraftTests */,
+				D884566A2DE406CD007EB67B /* WishCraftUITests */,
+				D8CE743A2DE61A060044CAAC /* WishCraftSaver */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D88456512DE406CB007EB67B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D884565F2DE406CD007EB67B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D88456692DE406CD007EB67B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8CE74392DE61A060044CAAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D884564F2DE406CB007EB67B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D884565D2DE406CD007EB67B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D88456672DE406CD007EB67B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8CE74372DE61A060044CAAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D88456632DE406CD007EB67B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D88456522DE406CB007EB67B /* WishCraft */;
+			targetProxy = D88456622DE406CD007EB67B /* PBXContainerItemProxy */;
+		};
+		D884566D2DE406CD007EB67B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D88456522DE406CB007EB67B /* WishCraft */;
+			targetProxy = D884566C2DE406CD007EB67B /* PBXContainerItemProxy */;
+		};
+		D8CE74532DE61A060044CAAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8CE743A2DE61A060044CAAC /* WishCraftSaver */;
+			targetProxy = D8CE74522DE61A060044CAAC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D88456732DE406CD007EB67B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D88456742DE406CD007EB67B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		D88456762DE406CD007EB67B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WishCraft/WishCraft.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = harshshah.WishCraft;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D88456772DE406CD007EB67B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WishCraft/WishCraft.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = harshshah.WishCraft;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		D88456792DE406CD007EB67B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = harshshah.WishCraftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WishCraft.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WishCraft";
+			};
+			name = Debug;
+		};
+		D884567A2DE406CD007EB67B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = harshshah.WishCraftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WishCraft.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WishCraft";
+			};
+			name = Release;
+		};
+		D884567C2DE406CD007EB67B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = harshshah.WishCraftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = WishCraft;
+			};
+			name = Debug;
+		};
+		D884567D2DE406CD007EB67B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = harshshah.WishCraftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = WishCraft;
+			};
+			name = Release;
+		};
+		D8CE74562DE61A060044CAAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = WishCraftSaver/WishCraftSaver.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WishCraftSaver/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WishCraftSaver;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = harshshah.WishCraft.WishCraftSaver;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D8CE74572DE61A060044CAAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = WishCraftSaver/WishCraftSaver.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WishCraftSaver/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WishCraftSaver;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = harshshah.WishCraft.WishCraftSaver;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D884564E2DE406CB007EB67B /* Build configuration list for PBXProject "WishCraft" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D88456732DE406CD007EB67B /* Debug */,
+				D88456742DE406CD007EB67B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D88456752DE406CD007EB67B /* Build configuration list for PBXNativeTarget "WishCraft" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D88456762DE406CD007EB67B /* Debug */,
+				D88456772DE406CD007EB67B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D88456782DE406CD007EB67B /* Build configuration list for PBXNativeTarget "WishCraftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D88456792DE406CD007EB67B /* Debug */,
+				D884567A2DE406CD007EB67B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D884567B2DE406CD007EB67B /* Build configuration list for PBXNativeTarget "WishCraftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D884567C2DE406CD007EB67B /* Debug */,
+				D884567D2DE406CD007EB67B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8CE74592DE61A060044CAAC /* Build configuration list for PBXNativeTarget "WishCraftSaver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8CE74562DE61A060044CAAC /* Debug */,
+				D8CE74572DE61A060044CAAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D884564B2DE406CB007EB67B /* Project object */;
+}
