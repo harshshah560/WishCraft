@@ -1,126 +1,134 @@
-WishCraft
+# **WishCraft**
 
-WishCraft is a beautifully designed macOS wishlist manager with a seamless Chrome extension for clipping products from the web. Built to help you remember what you want, stay organized, and track your dream purchases — both locally and while browsing.
+**WishCraft** is a beautifully designed macOS wishlist manager with a seamless Chrome extension for clipping products from the web. Built to help you remember what you want, stay organized, and track your dream purchases — both locally and while browsing.
 
-📌 Purpose
+---
 
-WishCraft was created to:
+## 📌 Purpose
 
-Serve as a lightweight, elegant macOS app for managing multiple categorized wishlists
+**WishCraft was created to:**
 
-Let users clip product links while browsing (like Zotero or Pinterest, but offline)
+* Serve as a lightweight, elegant macOS app for managing multiple categorized wishlists
+* Let users clip product links while browsing (like Zotero or Pinterest, but offline)
+* Stay local-first and private — no cloud accounts or online syncing required
+* Seamlessly bridge web + desktop with deep URL scheme integration
 
-Stay local-first and private — no cloud accounts or online syncing required
+---
 
-Seamlessly bridge web + desktop with deep URL scheme integration
+## 🖥 App Functionality
 
-🖥 App Functionality
+### ✅ Core Features
 
-✅ Core Features
+* **Multiple Wishlists**: Create, rename, and delete wishlists for categories like tech, clothes, gifts, etc.
+* **Wishlist Items**:
 
-Multiple Wishlists: Create, rename, and delete wishlists for categories like tech, clothes, gifts, etc.
+  * Each item has a **name**, **link**, **notes**, and **date added**
+  * Items are stored persistently using JSON in the app's document directory
+* **Dark Mode + UI Scaling**: Supports light/dark themes and adjustable UI size
+* **Cover Photo Support**: Set a banner image for each wishlist
+* **Sorting & Editing**: Sort items by date and edit them inline
 
-Wishlist Items:
+### 💾 Local Storage
 
-Each item has a name, link, notes, and date added
+WishCraft stores all data locally on disk and preferences using `@AppStorage`. No syncing. No cloud. 100% private.
 
-Items are stored persistently using JSON inside the app's local document directory
+### 🌐 Local Web Server (for Extension)
 
-Dark Mode + UI Scaling: Supports dark/light themes and adjustable UI size for accessibility
+WishCraft launches a tiny local HTTP server using [Swifter](https://github.com/httpswift/swifter) when the app is open. It exposes:
 
-Cover Photo: Set a banner image for each wishlist
+* `GET /getWishlists` — returns JSON of all wishlists
+* `POST /addItem` — accepts new wishlist items via JSON payload
 
-Sorting & Editing: Sort items by date and edit item info inline
+This allows the Chrome extension to interface directly with the app.
 
-💾 Local Storage
+### 🔗 Custom URL Scheme Support
 
-WishCraft uses SwiftUI's local document directory and @AppStorage for preferences. No data ever leaves your machine.
+* Registers `wishcraft://` protocol
+* Chrome extension uses `wishcraft://launch` to open the app if closed
+* App listens via `NSAppleEventManager` and brings itself to the foreground
 
-🌐 Local Web Server (for Extension)
+---
 
-The app starts a tiny local HTTP server on localhost:8080 using Swifter. It exposes two routes:
+## 🧩 Chrome Extension: WishCraft Clipper
 
-GET /getWishlists — returns a JSON list of your wishlists
+### 📂 Folder: `WishCraftClipper`
 
-POST /addItem — accepts a JSON payload to add an item to a wishlist
+This Chrome extension allows saving products from any webpage directly into a selected wishlist.
 
-The server only runs when the app is open.
+### 🧠 How It Works
 
-🔗 Custom URL Scheme Support
+* On launch:
 
-WishCraft registers the wishcraft:// URL scheme
+  * Pre-fills product **name** from the current tab title
+  * Lets user input **optional notes**
+  * Loads local wishlists via `GET http://localhost:8080/getWishlists`
+  * Dropdown lets you select one
+  * `POST` is sent to `http://localhost:8080/addItem`
+* If the app isn’t open, `wishcraft://launch` is opened to launch the app
 
-The Chrome extension uses wishcraft://launch to launch the app if it isn’t already running
+### 🛠 How to Install
 
-The app uses NSAppleEventManager to handle incoming URLs and bring itself to the foreground
+1. Go to `chrome://extensions`
+2. Enable **Developer Mode**
+3. Click **Load Unpacked**
+4. Select the `WishCraftClipper` folder
+5. Click the extension icon on any shopping/product page to save it!
 
-🧩 Chrome Extension: WishCraft Clipper
+### 🧪 Requirements
 
-📂 Folder: WishCraftClipper
+* WishCraft app must be running
+* Chrome must have permissions for `localhost`:
 
-This Chrome extension lets you save products from any site to any of your wishlists.
-
-🧠 How It Works
-
-When you click the extension:
-
-It pre-fills the product name using the current tab title
-
-Lets you write optional notes
-
-Loads your local wishlists using GET http://localhost:8080/getWishlists
-
-Lets you select one from a dropdown
-
-When you click Save, it sends a POST to http://localhost:8080/addItem
-
-If the WishCraft app isn't open, it sends a wishcraft://launch URL to auto-launch it
-
-🛠 How to Install the Extension
-
-Go to chrome://extensions
-
-Turn on Developer Mode (top right)
-
-Click Load Unpacked
-
-Select the WishCraftClipper folder
-
-You're done! Click the extension icon when browsing to save a product
-
-🧪 Requirements
-
-The WishCraft app must be open
-
-macOS must allow the custom wishcraft:// scheme to launch the app
-
-The extension must have localhost access in manifest.json:
-
+```json
 "host_permissions": [
   "http://localhost:8080/*"
 ]
+```
 
-🛠 Developer Setup
+* Custom URL protocol `wishcraft://` must be accepted by macOS once
 
-Clone this repo
+---
 
-Open WishCraft.xcodeproj in Xcode
+## 🛠 Developer Setup
 
-Build and run the app (macOS target)
+```bash
+git clone https://github.com/harshshah560/WishCraft.git
+cd WishCraft
+open WishCraft.xcodeproj
+```
 
-The extension can be edited separately inside WishCraftClipper
+* Build + run the macOS app via Xcode
+* Open `WishCraftClipper/` in any code editor to modify the Chrome extension
 
-✅ Roadmap
+---
 
+## ✅ Roadmap
 
+* [x] Add Chrome extension support
+* [x] Launch app from extension if closed
+* [x] Cover photos and UI scaling
+* [ ] Drag-and-drop support
+* [ ] Price tracking or auto-preview
+* [ ] Optional iOS companion
 
-📝 License
+---
 
-MIT License — free to use, modify, or build upon.
+## 📝 License
 
-🙌 Credits
+MIT License — Free to use, modify, or fork.
 
-Built by @harshshah560 with SwiftUI, Swifter, and a lot of debugging to make Chrome and macOS play nicely.
+---
 
-For any issues or feature requests, feel free to open an Issue.
+## 🙌 Credits
 
+Built by [@harshshah560](https://github.com/harshshah560) using:
+
+* SwiftUI
+* Swifter
+* Chrome Extension APIs
+
+For bug reports or feature requests, open an [Issue](https://github.com/harshshah560/WishCraft/issues).
+
+---
+
+**Made with ❤️ and frustration while fighting macOS URL handlers.**
